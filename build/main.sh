@@ -6,7 +6,7 @@ artifact_name="gcr.io/$projectid/$servicename"
 artifact_version="$servicemajor.$serviceminor.$BUILD_NUMBER"
 
 # Build
-docker build -t $artifact_name ./build/
+docker build -t $artifact_name .
 docker tag $artifact_name $artifact_name:$artifact_version
 
 # Push to Google Cloud Engine
