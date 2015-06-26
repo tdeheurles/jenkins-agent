@@ -1,5 +1,5 @@
 # import names
-. ./release.cfg
+. ./build/release.cfg
 
 # artifact tag
 artifact_tag="$servicemajor.$serviceminor.$BUILD_NUMBER"
@@ -12,6 +12,6 @@ artifact_name_tagged="$artifact_name:$artifact_tag"
 docker build -t $artifact_name .
 docker tag $artifact_name $artifact_name_tagged
 
-# Push to Google Cloud Engine 
+# Push to Google Cloud Engine
 gcloud docker push $artifact_name
 gcloud docker push $artifact_name_tagged
